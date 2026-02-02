@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Export_ EmadeSalesReports", "Export_ EmadeSalesReports.dtproj", "{9865C521-BA7C-E96D-240F-31E417B6590B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9865C521-BA7C-E96D-240F-31E417B6590B}.Development|Default.ActiveCfg = Development
+		{9865C521-BA7C-E96D-240F-31E417B6590B}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EDD8A3F-07EB-4492-83C1-7E76C977B121}
+	EndGlobalSection
+EndGlobal
