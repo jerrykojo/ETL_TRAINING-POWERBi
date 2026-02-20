@@ -1,0 +1,849 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/27/2026 5:49:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JERRY"
+  DTS:CreatorName="JERRY\HP"
+  DTS:DTSID="{1514D09B-B470-4023-BF2B-7768C21E92DD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Export_EmadeCustomersCompany"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{6B6DA5A6-28E7-4F31-891F-1C503AF94638}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6DBE38A-D1FA-44E5-98BB-CEF0D94DA39B}"
+      DTS:ObjectName="JERRY\MSSQLSERVER01.EmadeDev">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JERRY\MSSQLSERVER01;Initial Catalog=EmadeDev;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Export_EmadeCustomersCompany-{D6DBE38A-D1FA-44E5-98BB-CEF0D94DA39B}JERRY\MSSQLSERVER01.EmadeDev;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ProcessTask Export_EmadeCustomersCompany"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{A9371062-59A5-4F69-BEB4-8ED9AF9A9563}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ProcessTask Export_EmadeCustomersCompany">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2D04D1A9-D67D-4726-A272-57F76712C3D0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_Export_EmadeCustomersCompany"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Inputs[Conditional Split Input].Columns[state]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="state"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[state]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[California]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="California"
+                      synchronousInputId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[state]} == "CA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">state == "CA"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[NewYork]"
+                      description="Output 2 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="NewYork"
+                      synchronousInputId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[state]} == "NY"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">state == "NY"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[Texas]"
+                      description="Output 3 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Texas"
+                      synchronousInputId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[state]} == "TX"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">state == "TX"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">2</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_CA"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  name="FF_CA"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_CA.Connections[FlatFileConnection]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_CA.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <externalMetadataColumns
+                        isUsed="True" />
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_NY"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  name="FF_NY"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_NY.Connections[FlatFileConnection]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_NY.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <externalMetadataColumns
+                        isUsed="True" />
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_TX"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  name="FF_TX"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_TX.Connections[FlatFileConnection]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_TX.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <externalMetadataColumns
+                        isUsed="True" />
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SRC_Export_EmadeCustomersCompany"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
+From EmadeCustomers</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+                      connectionManagerRefId="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[customer_id]"
+                          name="customer_id"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[first_name]"
+                          name="first_name"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[last_name]"
+                          name="last_name"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[phone]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[phone]"
+                          name="phone"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[email]"
+                          name="email"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[street]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[street]"
+                          name="street"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[city]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[city]"
+                          name="city"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[state]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[state]"
+                          name="state"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[zip_code]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[zip_code]"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].Columns[zip_code]"
+                          name="zip_code"
+                          truncationRowDisposition="IgnoreFailure" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer_id" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="first_name" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="last_name" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="phone" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="street" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="city" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="state" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output].ExternalColumns[zip_code]"
+                          dataType="i4"
+                          name="zip_code" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                          name="customer_id" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                          name="first_name" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                          name="last_name" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[phone]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[phone]"
+                          name="phone" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[email]"
+                          name="email" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[street]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[street]"
+                          name="street" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[city]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[city]"
+                          name="city" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[state]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[state]"
+                          name="state" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[zip_code]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[zip_code]"
+                          name="zip_code" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany.Paths[California]"
+                  endId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_CA.Inputs[Flat File Destination Input]"
+                  name="California"
+                  startId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[California]" />
+                <path
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany.Paths[NewYork]"
+                  endId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_NY.Inputs[Flat File Destination Input]"
+                  name="NewYork"
+                  startId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[NewYork]" />
+                <path
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany.Paths[OLE DB Source Output]"
+                  endId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Inputs[Conditional Split Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany.Paths[Texas]"
+                  endId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_TX.Inputs[Flat File Destination Input]"
+                  name="Texas"
+                  startId="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split.Outputs[Texas]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="274.666666666667,42.6666666666667"
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany"
+          TopLeft="28.7916564686848,24.1052622563951" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="355.333333333334,120"
+          Size="355.333333333334,162.666666666667"
+          Id="Package\ProcessTask Export_EmadeCustomersCompany"
+          TopLeft="199.374991087243,15.0526314136724" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="276,42.6666666666667"
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany"
+          TopLeft="180.624991925434,19.1578945264922" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\Conditional Split"
+          TopLeft="228.749989774078,106.05263041451" />
+        <EdgeLayout
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany.Paths[OLE DB Source Output]"
+          TopLeft="318.624991925434,61.8245611931589">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.2083354846884,44.2280692213516"
+              Start="0,0"
+              End="-11.2083354846884,36.7280692213516">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1140346106758" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.1140346106758"
+                    Point2="0,22.1140346106758"
+                    Point3="-4,22.1140346106758" />
+                  <mssgle:LineSegment
+                    End="-7.2083354846884,22.1140346106758" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.2083354846884,22.1140346106758"
+                    Point2="-11.2083354846884,22.1140346106758"
+                    Point3="-11.2083354846884,26.1140346106758" />
+                  <mssgle:LineSegment
+                    End="-11.2083354846884,36.7280692213516" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112,42.6666666666667"
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_TX"
+          TopLeft="87.4999960884453,185.421050595692" />
+        <NodeLayout
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_CA"
+          TopLeft="335.624984996394,194.631576964069" />
+        <NodeLayout
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\FF_NY"
+          TopLeft="16.8749992456288,82.8421046170832" />
+        <EdgeLayout
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany.Paths[NewYork]"
+          TopLeft="228.749989774078,127.385963747844">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.5416571951164,-23.2105257974272"
+              Start="0,0"
+              End="-91.0416571951164,-23.2105257974272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-45.2708285975582,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-45.2708285975582,0"
+                    Point2="-49.2708285975582,0"
+                    Point3="-49.2708285975582,-4" />
+                  <mssgle:LineSegment
+                    End="-49.2708285975582,-19.2105257974272" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-49.2708285975582,-19.2105257974272"
+                    Point2="-49.2708285975582,-23.2105257974272"
+                    Point3="-53.2708285975582,-23.2105257974272" />
+                  <mssgle:LineSegment
+                    End="-91.0416571951164,-23.2105257974272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-69.5649496913082,1,40.5882421875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany.Paths[Texas]"
+          TopLeft="307.416656440745,148.719297081177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-163.9166603523,36.7017535145153"
+              Start="0,0"
+              End="-163.9166603523,29.2017535145153">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.3508767572577" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.3508767572577"
+                    Point2="0,18.3508767572577"
+                    Point3="-4,18.3508767572577" />
+                  <mssgle:LineSegment
+                    End="-159.9166603523,18.3508767572577" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-159.9166603523,18.3508767572577"
+                    Point2="-163.9166603523,18.3508767572577"
+                    Point3="-163.9166603523,22.3508767572577" />
+                  <mssgle:LineSegment
+                    End="-163.9166603523,29.2017535145153" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.7470020511499,23.3508767572577,27.57734375,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany.Paths[California]"
+          TopLeft="332.305545329634,148.719297081177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.9861063334264,45.9122798828923"
+              Start="0,0"
+              End="59.9861063334264,38.4122798828923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.6422344490939" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6422344490939"
+                    Point2="0,18.6422344490939"
+                    Point3="4,18.6422344490939" />
+                  <mssgle:LineSegment
+                    End="55.9861063334264,18.6422344490939" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.9861063334264,18.6422344490939"
+                    Point2="59.9861063334264,18.6422344490939"
+                    Point3="59.9861063334264,22.6422344490939" />
+                  <mssgle:LineSegment
+                    End="59.9861063334264,38.4122798828923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="8.8821742604632,23.6422344490939,42.2217578125,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ProcessTask Export_EmadeCustomersCompany\DFT_Export_EmadeCustomersCompany\SRC_Export_EmadeCustomersCompany">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
