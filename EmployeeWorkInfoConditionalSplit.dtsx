@@ -1,0 +1,1224 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/9/2026 2:11:42 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JERRY"
+  DTS:CreatorName="JERRY\HP"
+  DTS:DTSID="{81D70685-D20F-4FFF-8022-23A7576F4E66}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F8C24D0E-AC03-46DA-87C7-0E897EBFC842}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_Finance]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Finance"
+      DTS:DTSID="{328297DE-A93D-4D8D-A063-BEA8CE6CC3C7}"
+      DTS:ObjectName="FF_Finance">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\HP\Documents\EMADE\ETL_Training\Outbound\EmployeeFinance.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{C0060067-6E06-4CB0-AF1D-61DE7FDC4ED4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{0974F64B-8553-42F9-B7B4-6DBCDBAF4492}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Position"
+              DTS:DTSID="{7BDEC6DB-37FE-405A-8BCF-88F9D34679BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SocialSecurity"
+              DTS:DTSID="{7AD90A05-9865-498C-B48B-E4AB3C3DA61F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistanceFromHome"
+              DTS:DTSID="{8E2DF930-CD46-4FF2-9F9F-BBD0F4AD6F5D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{CACA515A-DD6D-4B1D-9845-B4FC33E79C72}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_Marketing]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Marketing"
+      DTS:DTSID="{0C77AADF-711D-4FE8-B4F4-944BD8625CA6}"
+      DTS:ObjectName="FF_Marketing">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\HP\Documents\EMADE\ETL_Training\Outbound\EmployeeMarketing.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{819D27A1-827E-4282-9B60-F1110687B851}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{98081F8F-45F2-49C6-961D-60F74483F3DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Position"
+              DTS:DTSID="{0B5BE8DA-8428-4AED-9F48-F52266BC5C92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SocialSecurity"
+              DTS:DTSID="{CCFF88E1-66AD-44E3-849D-8049BF95E0F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistanceFromHome"
+              DTS:DTSID="{CDB52EB7-CF26-47CB-A342-7746E97857F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{E7EBFDD7-9430-4C93-9201-51C32514A0AF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_Technical]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Technical"
+      DTS:DTSID="{7F15C3AE-3BAA-4182-BE9F-E2B004E6CC82}"
+      DTS:ObjectName="FF_Technical">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\HP\Documents\EMADE\ETL_Training\Outbound\EmployeeTechnical.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{605FE7DA-AD4A-440D-88A9-56C7721073A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{8751C3E5-47EA-4E23-B896-669353E9AC1B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Position"
+              DTS:DTSID="{26BBBA2B-3555-48F7-ACF5-0BBD0B099B6F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SocialSecurity"
+              DTS:DTSID="{AA44D93A-5ED8-40CE-A625-9E1CE9B3FD48}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DistanceFromHome"
+              DTS:DTSID="{9A52489A-A6D9-4010-8694-71D322E205F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department"
+              DTS:DTSID="{E262FDFB-C7E8-4178-BE88-D38CA01A019D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EB4C9E34-FD93-4885-9F99-4BF2724F3D26}"
+      DTS:ObjectName="JERRY\MSSQLSERVER01.EmadeDev">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JERRY\MSSQLSERVER01;Initial Catalog=EmadeDev;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{EB4C9E34-FD93-4885-9F99-4BF2724F3D26}JERRY\MSSQLSERVER01.EmadeDev;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3F157217-7C37-4897-841E-AF65AE46B3F0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ProcessTask_ExportEmployeeWorkInfoByDepartment">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F8D4598D-E685-4058-AB58-8F4EB105CE3D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_Export_Employee"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Inputs[Conditional Split Input].Columns[Department]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Department"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Finance]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Finance"
+                      synchronousInputId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]} == "Finance"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">Department == "Finance"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Marketing]"
+                      description="Output 2 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Marketing"
+                      synchronousInputId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]} == "Marketing"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">Department == "Marketing"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Technical]"
+                      description="Output 3 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Technical"
+                      synchronousInputId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]} == "Technical"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">Department == "Technical"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">2</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="Finance"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_Finance]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_Finance]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].Columns[Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].Columns[Position]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Position"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[Position]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Position]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].Columns[SocialSecurity]"
+                          cachedDataType="i4"
+                          cachedName="SocialSecurity"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[SocialSecurity]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[SocialSecurity]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].Columns[DistanceFromHome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DistanceFromHome"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[DistanceFromHome]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[DistanceFromHome]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].Columns[Department]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Department"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[Position]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Position" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[SocialSecurity]"
+                          dataType="i4"
+                          name="SocialSecurity" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[DistanceFromHome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistanceFromHome" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Department" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="Marketing"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_Marketing]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_Marketing]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].Columns[Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].Columns[Position]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Position"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[Position]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Position]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].Columns[SocialSecurity]"
+                          cachedDataType="i4"
+                          cachedName="SocialSecurity"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[SocialSecurity]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[SocialSecurity]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].Columns[DistanceFromHome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DistanceFromHome"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[DistanceFromHome]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[DistanceFromHome]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].Columns[Department]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Department"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[Position]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Position" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[SocialSecurity]"
+                          dataType="i4"
+                          name="SocialSecurity" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[DistanceFromHome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistanceFromHome" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Department" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SRC_EmployeeWorkInfoAll"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
+FROM EmpWorkInfoAll</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+                      connectionManagerRefId="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                          length="50"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Name]"
+                          name="Name"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Position]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[Position]"
+                          length="50"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Position]"
+                          name="Position"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[SocialSecurity]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[SocialSecurity]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[SocialSecurity]"
+                          name="SocialSecurity"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[DistanceFromHome]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[DistanceFromHome]"
+                          length="50"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[DistanceFromHome]"
+                          name="DistanceFromHome"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[Department]"
+                          length="50"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]"
+                          name="Department"
+                          truncationRowDisposition="IgnoreFailure" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[Position]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Position" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[SocialSecurity]"
+                          dataType="i4"
+                          name="SocialSecurity" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[DistanceFromHome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistanceFromHome" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].ExternalColumns[Department]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Department" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[Name]"
+                          name="Name" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[Position]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[Position]"
+                          name="Position" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[SocialSecurity]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[SocialSecurity]"
+                          name="SocialSecurity" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[DistanceFromHome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[DistanceFromHome]"
+                          name="DistanceFromHome" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[Department]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[Department]"
+                          name="Department" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="Technical"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_Technical]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_Technical]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[id]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].Columns[Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].Columns[Position]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Position"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[Position]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Position]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].Columns[SocialSecurity]"
+                          cachedDataType="i4"
+                          cachedName="SocialSecurity"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[SocialSecurity]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[SocialSecurity]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].Columns[DistanceFromHome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DistanceFromHome"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[DistanceFromHome]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[DistanceFromHome]" />
+                        <inputColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].Columns[Department]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Department"
+                          externalMetadataColumnId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                          lineageId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output].Columns[Department]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[Position]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Position" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[SocialSecurity]"
+                          dataType="i4"
+                          name="SocialSecurity" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[DistanceFromHome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DistanceFromHome" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input].ExternalColumns[Department]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Department" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee.Paths[Finance]"
+                  endId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance.Inputs[Flat File Destination Input]"
+                  name="Finance"
+                  startId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Finance]" />
+                <path
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee.Paths[Marketing]"
+                  endId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing.Inputs[Flat File Destination Input]"
+                  name="Marketing"
+                  startId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Marketing]" />
+                <path
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee.Paths[OLE DB Source Output]"
+                  endId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Inputs[Conditional Split Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee.Paths[Technical]"
+                  endId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical.Inputs[Flat File Destination Input]"
+                  name="Technical"
+                  startId="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split.Outputs[Technical]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="190.666666666667,42.6666666666667"
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee"
+          TopLeft="85.1666594023509,29.1228059657944" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="358,126.666666666667"
+          Size="358,170"
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment"
+          TopLeft="77.4999965354802,23.9473681581153" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll"
+          TopLeft="177.499992065132,15.7368419324757" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Conditional Split"
+          TopLeft="212.49999050051,92.3684200384446" />
+        <EdgeLayout
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee.Paths[OLE DB Source Output]"
+          TopLeft="282.833325398465,58.4035085991424">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.3333317687115,33.9649114393022"
+              Start="0,0"
+              End="8.3333317687115,26.4649114393022">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.9824557196511" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.9824557196511"
+                    Point2="0,16.9824557196511"
+                    Point3="4,16.9824557196511" />
+                  <mssgle:LineSegment
+                    End="4.3333317687115,16.9824557196511" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.3333317687115,16.9824557196511"
+                    Point2="8.3333317687115,16.9824557196511"
+                    Point3="8.3333317687115,20.9824557196511" />
+                  <mssgle:LineSegment
+                    End="8.3333317687115,26.4649114393022" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="125.333333333334,42.6666666666667"
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Technical"
+          TopLeft="422.499981112779,171.912280739317" />
+        <NodeLayout
+          Size="117.333333333334,42.6666666666667"
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Finance"
+          TopLeft="45.6249979604037,165.017542282025" />
+        <NodeLayout
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\Marketing"
+          TopLeft="235.624989466742,173.912279026468" />
+        <EdgeLayout
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee.Paths[Finance]"
+          TopLeft="291.166657167177,135.035086705111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-186.874992540106,29.9824555769136"
+              Start="0,0"
+              End="-186.874992540106,22.4824555769136">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9912277884568" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9912277884568"
+                    Point2="0,14.9912277884568"
+                    Point3="-4,14.9912277884568" />
+                  <mssgle:LineSegment
+                    End="-182.874992540106,14.9912277884568" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-182.874992540106,14.9912277884568"
+                    Point2="-186.874992540106,14.9912277884568"
+                    Point3="-186.874992540106,18.9912277884568" />
+                  <mssgle:LineSegment
+                    End="-186.874992540106,22.4824555769136" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-110.828843926303,19.9912277884568,34.7826953125,9.470703125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee.Paths[Marketing]"
+          TopLeft="295.062489983626,135.035086705111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.8771923213565"
+              Start="0,0"
+              End="0,31.3771923213565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.3771923213565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-22.06798828125,9.85705319192827,44.1359765625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee.Paths[Technical]"
+          TopLeft="328.49999050051,135.035086705111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156.666657278936,36.8771940342056"
+              Start="0,0"
+              End="156.666657278936,29.3771940342056">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.70214461178195" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.70214461178195"
+                    Point2="0,12.7021446117819"
+                    Point3="4,12.7021446117819" />
+                  <mssgle:LineSegment
+                    End="152.666657278936,12.7021446117819" />
+                  <mssgle:CubicBezierSegment
+                    Point1="152.666657278936,12.7021446117819"
+                    Point2="156.666657278936,12.7021446117819"
+                    Point3="156.666657278936,16.7021446117819" />
+                  <mssgle:LineSegment
+                    End="156.666657278936,29.3771940342056" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="57.0201059832178,17.7021446117819,42.6264453125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ProcessTask_ExportEmployeeWorkInfoByDepartment\DFT_Export_Employee\SRC_EmployeeWorkInfoAll">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
