@@ -1,0 +1,2475 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/27/2026 4:01:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JERRY"
+  DTS:CreatorName="JERRY\HP"
+  DTS:DTSID="{0062D2A9-A1D9-4FF5-86C1-2A78EE603004}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="ExportWalmartSalesByState"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{D05DD24C-41AE-47B9-A688-C562C7A5FA54}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_CA]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="California"
+      DTS:DTSID="{4D5F647B-4345-4DBB-B80A-05230CB1002F}"
+      DTS:ObjectName="FF_CA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\HP\Documents\EMADE\ETL_Training\Outbound\WalmartSales_California.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionType"
+              DTS:DTSID="{6186F7C1-82E4-4FDB-A535-4F07CE495188}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionName"
+              DTS:DTSID="{07753C29-EB5C-4BF1-A168-D16F0F8D9357}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{D5746AEE-176C-4400-84A1-584E037D49D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{7F80E874-1AB9-44DA-A809-F1AA525B1BE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Metro"
+              DTS:DTSID="{C8360A56-A289-46BE-9176-3D4CE3EAACB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CBSATitle"
+              DTS:DTSID="{662A6B9F-4040-4651-9F89-7E1190778F28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SizeRank"
+              DTS:DTSID="{38113D8B-4527-4D2C-98FE-6B796D9E2C3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MarketHealthIndex"
+              DTS:DTSID="{A8A8C47A-801A-4D1D-A2CE-2200D8F31B3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SellForGain"
+              DTS:DTSID="{C16E2E39-7DDD-49BA-A064-A4F3895E5BF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PrevForeclosed"
+              DTS:DTSID="{5ACC0911-0294-4AC2-8070-F7B607BC8F89}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ForeclosureRatio"
+              DTS:DTSID="{71F571B8-D88F-4E60-A23C-8BF49A4EEEFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZHVI"
+              DTS:DTSID="{9A0C67CE-8E9C-4EB7-853A-107FE3BFB203}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MoM"
+              DTS:DTSID="{574B1EEE-3EA5-465E-B78C-4C9360800FBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YoY"
+              DTS:DTSID="{B6414131-E879-4CB3-BE01-36121FEEEC75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ForecastYoYPctChange"
+              DTS:DTSID="{554AD02D-BEDA-4C6D-BF41-2443A3247BF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StockOfREOs"
+              DTS:DTSID="{E3A23CF7-8DB7-4B63-AE66-C40D64ED4231}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NegativeEquity"
+              DTS:DTSID="{98BCF01A-7FDD-45F0-A818-5BF739970F4F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delinquency"
+              DTS:DTSID="{01B08BF3-3E78-4879-A87F-9F44218BF3B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DaysOnMarket"
+              DTS:DTSID="{B79FAFE7-E700-4A94-84E5-6D13CDE7B1F4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_FL]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Florida"
+      DTS:DTSID="{A80735CB-36BD-410E-9905-8AE4EE03153F}"
+      DTS:ObjectName="FF_FL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\HP\Documents\EMADE\ETL_Training\Outbound\WalmartSales_Florida.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionType"
+              DTS:DTSID="{BFF81F6E-0925-4AE2-9C44-75D0E802C5F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionName"
+              DTS:DTSID="{52AC2DD1-11B3-4A1D-A771-0B8E0AFEC516}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{AC53EEB4-EF0F-49DF-8B29-184C8A5E141F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{546D8E0F-A5DB-4FE6-90BE-CD0D80D6B542}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Metro"
+              DTS:DTSID="{B5481686-1842-453F-91AD-C34FAF0A7394}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CBSATitle"
+              DTS:DTSID="{F9B0037C-590E-448B-AF75-D398640A5F02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SizeRank"
+              DTS:DTSID="{5F57B09D-B771-4F30-9BBC-EF3EC832D143}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MarketHealthIndex"
+              DTS:DTSID="{244F52D7-4BD0-49BB-B06D-0B50BE27C52B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SellForGain"
+              DTS:DTSID="{656BE0D2-C7F0-4A78-BAAC-F1CD3B61F53B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PrevForeclosed"
+              DTS:DTSID="{6C4380AA-2382-42D0-A025-7D24CB370C89}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ForeclosureRatio"
+              DTS:DTSID="{23CE5F2E-400A-4EA5-BAEC-4AD4EBCFCB1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZHVI"
+              DTS:DTSID="{A2E75E41-6087-44BE-8D96-EF29F3A46FE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MoM"
+              DTS:DTSID="{E05C3FAE-E2C4-4AA4-8E8F-2488F5B28760}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YoY"
+              DTS:DTSID="{3A7AED28-D643-47E6-BE7B-373A07509154}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ForecastYoYPctChange"
+              DTS:DTSID="{6A85E6ED-FA30-4F52-AB3B-02368EA5908B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StockOfREOs"
+              DTS:DTSID="{C8079139-CF29-4A70-BCDE-9156A5858106}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NegativeEquity"
+              DTS:DTSID="{43BF3DFD-DF5B-47A5-8139-11C706CDBDCA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delinquency"
+              DTS:DTSID="{5E48DE99-17DA-40EC-829F-51A6A23E4DB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DaysOnMarket"
+              DTS:DTSID="{B686E5A6-1CBA-4142-8E9C-E69A00A90E73}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_NY]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="NewYork"
+      DTS:DTSID="{E03C3E70-74CB-40AE-8FCB-D310650DEB37}"
+      DTS:ObjectName="FF_NY">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\HP\Documents\EMADE\ETL_Training\Outbound\WalmartSales_NewYork.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionType"
+              DTS:DTSID="{EBF10512-6AB5-4086-94C3-CD17BF2F58CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RegionName"
+              DTS:DTSID="{1EE7C8F2-DC1D-42F0-B79D-30919B5D8668}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{7834802E-7E0F-4237-99F8-436FB0370916}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{5C2BD4D6-FB4D-4149-B330-B99048C13DB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Metro"
+              DTS:DTSID="{4D9A632C-3673-4C28-AA39-7D8AA42E21E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CBSATitle"
+              DTS:DTSID="{2B841F93-82E9-432D-9C71-C00E8FEA6DF6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SizeRank"
+              DTS:DTSID="{4C598E82-9A96-4AEF-B789-5B68ABD4FC18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MarketHealthIndex"
+              DTS:DTSID="{7756A514-1924-43C5-A61C-76865019EE41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SellForGain"
+              DTS:DTSID="{3F57C707-36AF-4A12-B979-F10E173BF814}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PrevForeclosed"
+              DTS:DTSID="{B1E7CA8B-B275-4648-B6D4-55F124DED217}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ForeclosureRatio"
+              DTS:DTSID="{14496883-C8F3-4546-B3D6-BE204D254654}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZHVI"
+              DTS:DTSID="{5B665594-6577-4AD1-97F3-545A86B3A950}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MoM"
+              DTS:DTSID="{D771EF21-023C-4A74-A950-84E4DC1FD747}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YoY"
+              DTS:DTSID="{2521A932-9CDF-4C9D-BAB2-871242D64FD7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ForecastYoYPctChange"
+              DTS:DTSID="{7B604ACE-F0D6-419B-A206-949591863E9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StockOfREOs"
+              DTS:DTSID="{40CAF16F-3876-4454-912C-AEA253673C21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NegativeEquity"
+              DTS:DTSID="{E9B4B774-DB50-4905-81D7-9A090B9218CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delinquency"
+              DTS:DTSID="{1598E293-3396-430D-9973-C2A4B3E2217D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DaysOnMarket"
+              DTS:DTSID="{DE397633-E1D5-459D-AAED-6F4E9D577860}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{89847469-6E4F-46AD-8E80-ECB861B1ED11}"
+      DTS:ObjectName="JERRY\MSSQLSERVER01.EmadeDev">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=JERRY\MSSQLSERVER01;Initial Catalog=EmadeDev;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ExportWalmartSalesByState-{89847469-6E4F-46AD-8E80-ECB861B1ED11}JERRY\MSSQLSERVER01.EmadeDev;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ProcessTask ExportWalmartSalesByState"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B34A22E8-53D4-45D4-9F53-618A8ED28EC7}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ProcessTask ExportWalmartSalesByState">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{521A69A3-1007-4A21-AEFE-4DD84FEB3088}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_ExportWalmartSalesByState"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Inputs[Conditional Split Input].Columns[State]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="State"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[NewYork]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="NewYork"
+                      synchronousInputId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]} == "NY"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">State == "NY"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[Florida]"
+                      description="Output 2 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Florida"
+                      synchronousInputId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]} == "FL"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">State == "FL"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[California]"
+                      description="Output 3 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="California"
+                      synchronousInputId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]} == "CA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">State == "CA"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">2</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="FF_CA"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_CA]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_CA]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[RegionType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="RegionType"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[RegionType]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionType]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[RegionName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="RegionName"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[RegionName]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionName]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[City]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[State]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[Metro]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="Metro"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[Metro]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Metro]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[CBSATitle]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="CBSATitle"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[CBSATitle]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[CBSATitle]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[SizeRank]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="SizeRank"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[SizeRank]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SizeRank]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[MarketHealthIndex]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="MarketHealthIndex"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[MarketHealthIndex]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MarketHealthIndex]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[SellForGain]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="SellForGain"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[SellForGain]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SellForGain]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[PrevForeclosed]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PrevForeclosed"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[PrevForeclosed]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[PrevForeclosed]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[ForeclosureRatio]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ForeclosureRatio"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[ForeclosureRatio]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForeclosureRatio]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[ZHVI]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ZHVI"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[ZHVI]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ZHVI]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[MoM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="MoM"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[MoM]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MoM]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[YoY]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="YoY"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[YoY]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[YoY]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[ForecastYoYPctChange]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ForecastYoYPctChange"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[ForecastYoYPctChange]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForecastYoYPctChange]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[StockOfREOs]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="StockOfREOs"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[StockOfREOs]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[StockOfREOs]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[NegativeEquity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="NegativeEquity"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[NegativeEquity]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[NegativeEquity]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[Delinquency]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="Delinquency"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[Delinquency]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Delinquency]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].Columns[DaysOnMarket]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="DaysOnMarket"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[DaysOnMarket]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[DaysOnMarket]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[RegionType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="RegionType" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="RegionName" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[Metro]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Metro" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[CBSATitle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="CBSATitle" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[SizeRank]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="SizeRank" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[MarketHealthIndex]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="MarketHealthIndex" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[SellForGain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="SellForGain" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[PrevForeclosed]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="PrevForeclosed" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[ForeclosureRatio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ForeclosureRatio" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[ZHVI]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ZHVI" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[MoM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="MoM" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[YoY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="YoY" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[ForecastYoYPctChange]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ForecastYoYPctChange" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[StockOfREOs]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="StockOfREOs" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[NegativeEquity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="NegativeEquity" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[Delinquency]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Delinquency" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input].ExternalColumns[DaysOnMarket]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="DaysOnMarket" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="FF_FL"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_FL]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_FL]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[RegionType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="RegionType"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[RegionType]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionType]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[RegionName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="RegionName"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[RegionName]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionName]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[City]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[State]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[Metro]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="Metro"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[Metro]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Metro]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[CBSATitle]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="CBSATitle"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[CBSATitle]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[CBSATitle]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[SizeRank]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="SizeRank"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[SizeRank]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SizeRank]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[MarketHealthIndex]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="MarketHealthIndex"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[MarketHealthIndex]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MarketHealthIndex]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[SellForGain]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="SellForGain"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[SellForGain]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SellForGain]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[PrevForeclosed]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PrevForeclosed"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[PrevForeclosed]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[PrevForeclosed]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[ForeclosureRatio]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ForeclosureRatio"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[ForeclosureRatio]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForeclosureRatio]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[ZHVI]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ZHVI"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[ZHVI]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ZHVI]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[MoM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="MoM"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[MoM]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MoM]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[YoY]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="YoY"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[YoY]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[YoY]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[ForecastYoYPctChange]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ForecastYoYPctChange"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[ForecastYoYPctChange]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForecastYoYPctChange]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[StockOfREOs]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="StockOfREOs"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[StockOfREOs]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[StockOfREOs]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[NegativeEquity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="NegativeEquity"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[NegativeEquity]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[NegativeEquity]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[Delinquency]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="Delinquency"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[Delinquency]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Delinquency]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].Columns[DaysOnMarket]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="DaysOnMarket"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[DaysOnMarket]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[DaysOnMarket]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[RegionType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="RegionType" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="RegionName" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[Metro]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Metro" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[CBSATitle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="CBSATitle" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[SizeRank]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="SizeRank" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[MarketHealthIndex]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="MarketHealthIndex" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[SellForGain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="SellForGain" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[PrevForeclosed]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="PrevForeclosed" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[ForeclosureRatio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ForeclosureRatio" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[ZHVI]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ZHVI" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[MoM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="MoM" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[YoY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="YoY" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[ForecastYoYPctChange]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ForecastYoYPctChange" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[StockOfREOs]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="StockOfREOs" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[NegativeEquity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="NegativeEquity" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[Delinquency]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Delinquency" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input].ExternalColumns[DaysOnMarket]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="DaysOnMarket" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="FF_NY"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_NY]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_NY]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[RegionType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="RegionType"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[RegionType]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionType]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[RegionName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="RegionName"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[RegionName]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionName]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[City]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[State]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[Metro]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="Metro"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[Metro]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Metro]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[CBSATitle]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="CBSATitle"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[CBSATitle]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[CBSATitle]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[SizeRank]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="SizeRank"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[SizeRank]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SizeRank]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[MarketHealthIndex]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="MarketHealthIndex"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[MarketHealthIndex]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MarketHealthIndex]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[SellForGain]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="SellForGain"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[SellForGain]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SellForGain]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[PrevForeclosed]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PrevForeclosed"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[PrevForeclosed]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[PrevForeclosed]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[ForeclosureRatio]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ForeclosureRatio"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[ForeclosureRatio]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForeclosureRatio]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[ZHVI]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ZHVI"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[ZHVI]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ZHVI]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[MoM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="MoM"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[MoM]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MoM]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[YoY]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="YoY"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[YoY]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[YoY]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[ForecastYoYPctChange]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ForecastYoYPctChange"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[ForecastYoYPctChange]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForecastYoYPctChange]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[StockOfREOs]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="StockOfREOs"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[StockOfREOs]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[StockOfREOs]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[NegativeEquity]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="NegativeEquity"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[NegativeEquity]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[NegativeEquity]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[Delinquency]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="Delinquency"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[Delinquency]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Delinquency]" />
+                        <inputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].Columns[DaysOnMarket]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="DaysOnMarket"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[DaysOnMarket]"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[DaysOnMarket]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[RegionType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="RegionType" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="RegionName" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[Metro]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Metro" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[CBSATitle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="CBSATitle" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[SizeRank]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="SizeRank" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[MarketHealthIndex]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="MarketHealthIndex" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[SellForGain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="SellForGain" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[PrevForeclosed]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="PrevForeclosed" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[ForeclosureRatio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ForeclosureRatio" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[ZHVI]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ZHVI" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[MoM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="MoM" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[YoY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="YoY" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[ForecastYoYPctChange]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ForecastYoYPctChange" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[StockOfREOs]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="StockOfREOs" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[NegativeEquity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="NegativeEquity" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[Delinquency]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Delinquency" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input].ExternalColumns[DaysOnMarket]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="DaysOnMarket" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SCR_ExportWalmartSalesByState"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
+From WalmartSales</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+                      connectionManagerRefId="Package.ConnectionManagers[JERRY\MSSQLSERVER01.EmadeDev]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionType]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[RegionType]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionType]"
+                          name="RegionType"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[RegionName]"
+                          name="RegionName"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[City]"
+                          name="City"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[State]"
+                          name="State"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Metro]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[Metro]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Metro]"
+                          name="Metro"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[CBSATitle]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[CBSATitle]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[CBSATitle]"
+                          name="CBSATitle"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SizeRank]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[SizeRank]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SizeRank]"
+                          name="SizeRank"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MarketHealthIndex]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[MarketHealthIndex]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MarketHealthIndex]"
+                          name="MarketHealthIndex"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SellForGain]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[SellForGain]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[SellForGain]"
+                          name="SellForGain"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[PrevForeclosed]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[PrevForeclosed]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[PrevForeclosed]"
+                          name="PrevForeclosed"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForeclosureRatio]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[ForeclosureRatio]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForeclosureRatio]"
+                          name="ForeclosureRatio"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ZHVI]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[ZHVI]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ZHVI]"
+                          name="ZHVI"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MoM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[MoM]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[MoM]"
+                          name="MoM"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[YoY]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[YoY]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[YoY]"
+                          name="YoY"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForecastYoYPctChange]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[ForecastYoYPctChange]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[ForecastYoYPctChange]"
+                          name="ForecastYoYPctChange"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[StockOfREOs]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[StockOfREOs]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[StockOfREOs]"
+                          name="StockOfREOs"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[NegativeEquity]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[NegativeEquity]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[NegativeEquity]"
+                          name="NegativeEquity"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Delinquency]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[Delinquency]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[Delinquency]"
+                          name="Delinquency"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[DaysOnMarket]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[DaysOnMarket]"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].Columns[DaysOnMarket]"
+                          name="DaysOnMarket"
+                          truncationRowDisposition="IgnoreFailure" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[RegionType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="RegionType" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="RegionName" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[Metro]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Metro" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[CBSATitle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="CBSATitle" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[SizeRank]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="SizeRank" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[MarketHealthIndex]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="MarketHealthIndex" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[SellForGain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="SellForGain" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[PrevForeclosed]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="PrevForeclosed" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[ForeclosureRatio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ForeclosureRatio" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[ZHVI]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ZHVI" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[MoM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="MoM" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[YoY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="YoY" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[ForecastYoYPctChange]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="ForecastYoYPctChange" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[StockOfREOs]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="StockOfREOs" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[NegativeEquity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="NegativeEquity" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[Delinquency]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="Delinquency" />
+                        <externalMetadataColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output].ExternalColumns[DaysOnMarket]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          name="DaysOnMarket" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[RegionType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[RegionType]"
+                          name="RegionType" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[RegionName]"
+                          name="RegionName" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[City]"
+                          name="City" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[State]"
+                          name="State" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[Metro]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[Metro]"
+                          name="Metro" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[CBSATitle]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[CBSATitle]"
+                          name="CBSATitle" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[SizeRank]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[SizeRank]"
+                          name="SizeRank" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[MarketHealthIndex]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[MarketHealthIndex]"
+                          name="MarketHealthIndex" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[SellForGain]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[SellForGain]"
+                          name="SellForGain" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[PrevForeclosed]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[PrevForeclosed]"
+                          name="PrevForeclosed" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ForeclosureRatio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ForeclosureRatio]"
+                          name="ForeclosureRatio" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ZHVI]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ZHVI]"
+                          name="ZHVI" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[MoM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[MoM]"
+                          name="MoM" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[YoY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[YoY]"
+                          name="YoY" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ForecastYoYPctChange]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ForecastYoYPctChange]"
+                          name="ForecastYoYPctChange" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[StockOfREOs]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[StockOfREOs]"
+                          name="StockOfREOs" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[NegativeEquity]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[NegativeEquity]"
+                          name="NegativeEquity" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[Delinquency]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[Delinquency]"
+                          name="Delinquency" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[DaysOnMarket]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8000"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[DaysOnMarket]"
+                          name="DaysOnMarket" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState.Paths[California]"
+                  endId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA.Inputs[Flat File Destination Input]"
+                  name="California"
+                  startId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[California]" />
+                <path
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState.Paths[Florida]"
+                  endId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL.Inputs[Flat File Destination Input]"
+                  name="Florida"
+                  startId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[Florida]" />
+                <path
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState.Paths[NewYork]"
+                  endId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY.Inputs[Flat File Destination Input]"
+                  name="NewYork"
+                  startId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Outputs[NewYork]" />
+                <path
+                  refId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState.Paths[OLE DB Source Output]"
+                  endId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split.Inputs[Conditional Split Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="241.333333333334,42.6666666666667"
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState"
+          TopLeft="53.4583262645952,24.6491216726306" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="386,119.333333333334"
+          Size="386,162.666666666667"
+          Id="Package\ProcessTask ExportWalmartSalesByState"
+          TopLeft="104.374995334074,36.2631574965745" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="242.666666666667,42.6666666666667"
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState"
+          TopLeft="168.749992456287,17.1052629700823" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\Conditional Split"
+          TopLeft="219.374990193174,101.263156782887" />
+        <EdgeLayout
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState.Paths[OLE DB Source Output]"
+          TopLeft="294.06249132473,59.771929636749">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.4912271461384"
+              Start="0,0"
+              End="0,33.9912271461384">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.9912271461384" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="110.666666666667,42.6666666666667"
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_FL"
+          TopLeft="26.2499988265336,164.21052451279" />
+        <NodeLayout
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_NY"
+          TopLeft="16.2499992735684,69.1052623991326" />
+        <NodeLayout
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\FF_CA"
+          TopLeft="394.374982370064,166.947366588004" />
+        <EdgeLayout
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState.Paths[NewYork]"
+          TopLeft="219.374990193174,122.596490116221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89.7916575862718,-32.1578943837548"
+              Start="0,0"
+              End="-82.2916575862718,-32.1578943837548">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-40.8958287931359,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-40.8958287931359,0"
+                    Point2="-44.8958287931359,0"
+                    Point3="-44.8958287931359,-4" />
+                  <mssgle:LineSegment
+                    End="-44.8958287931359,-28.1578943837548" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.8958287931359,-28.1578943837548"
+                    Point2="-44.8958287931359,-32.1578943837548"
+                    Point3="-48.8958287931359,-32.1578943837548" />
+                  <mssgle:LineSegment
+                    End="-82.2916575862718,-32.1578943837548" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-65.1899498868859,1,40.5882421875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState.Paths[Florida]"
+          TopLeft="219.374990193174,128.374267893998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.4583246999733,57.1695899521252"
+              Start="0,0"
+              End="-74.9583246999733,57.1695899521252">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-30.771582704808,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.771582704808,0"
+                    Point2="-34.771582704808,0"
+                    Point3="-34.771582704808,4" />
+                  <mssgle:LineSegment
+                    End="-34.771582704808,53.1695899521252" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34.771582704808,53.1695899521252"
+                    Point2="-34.771582704808,57.1695899521252"
+                    Point3="-38.771582704808,57.1695899521252" />
+                  <mssgle:LineSegment
+                    End="-74.9583246999733,57.1695899521252" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.889942079808,-15.7490234375,30.23671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState.Paths[California]"
+          TopLeft="298.04165685984,143.929823449554">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="152.999992176891,23.0175431384495"
+              Start="0,0"
+              End="152.999992176891,15.5175431384495">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.50877156922475" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.50877156922475"
+                    Point2="0,11.5087715692247"
+                    Point3="4,11.5087715692247" />
+                  <mssgle:LineSegment
+                    End="148.999992176891,11.5087715692247" />
+                  <mssgle:CubicBezierSegment
+                    Point1="148.999992176891,11.5087715692247"
+                    Point2="152.999992176891,11.5087715692247"
+                    Point3="152.999992176891,15.5087715692247" />
+                  <mssgle:LineSegment
+                    End="152.999992176891,15.5175431384495" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="55.3891171821954,16.5087715692247,42.2217578125,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ProcessTask ExportWalmartSalesByState\DFT_ExportWalmartSalesByState\SCR_ExportWalmartSalesByState">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
